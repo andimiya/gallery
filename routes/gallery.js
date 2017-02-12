@@ -27,8 +27,8 @@ router.post('/', (req, res) => {
     link: req.body.link,
     description: req.body.description
   })
-    .then(function (photo) {
-      res.json(photo);
+    .then( (photos) => {
+      res.redirect('/gallery');
     });
 });
 
