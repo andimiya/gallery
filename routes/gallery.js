@@ -59,19 +59,28 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   Photo.update(
-  {
-    author: req.body.author,
+  { author: req.body.author,
     link: req.body.link,
     description: req.body.description
   },
-  {
-    where: {
+  { where: {
       id: req.params.id
     }
   })
     .then( (photo) => {
       res.redirect('/gallery');
     });
+});
+
+router.delete('/:id', (req, res) => {
+  Photo.destroy(
+  { where: {
+    id: req.params.id
+  }
+})
+  .then ( (photo) => {
+    res.redirect('/gallery');
+  });
 });
 
 module.exports = router;
