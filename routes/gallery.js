@@ -5,10 +5,11 @@ const { User, Photo } = db;
 
 router.get('/', (req, res) => {
   Photo.findAll()
-    .then(function (photos) {
-      res.json(photos);
+    .then( (photos) => {
+      res.render('pages/gallery', {
+        "photos": photos
+      });
     });
-  res.render('pages/gallery');
 });
 
 router.get('/id', (req, res) => {
@@ -29,8 +30,6 @@ router.post('/', (req, res) => {
     .then(function (photo) {
       res.json(photo);
     });
-
-  // res.redirect('/');
 });
 
 module.exports = router;
