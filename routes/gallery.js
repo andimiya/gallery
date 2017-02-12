@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const { User, Photo } = db;
+const methodOverride = require('method-override');
+
+router.use(methodOverride('_method'));
 
 router.get('/', (req, res) => {
   Photo.findAll()
@@ -55,7 +58,20 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-
+  Photo.update(
+  {
+    author: req.body.author,
+    link: req.body.link,
+    description: req.body.description
+  },
+  {
+    where: {
+      id: req.params.id
+    }
+  })
+    .then( (photo) => {
+      res.redirect('/gallery');
+    });
 });
 
 module.exports = router;
