@@ -12,8 +12,18 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/id', (req, res) => {
-  res.render('pages/single-photo');
+router.get('/:id', (req, res) => {
+  console.log(req.params.id, 'req param id');
+  Photo.findAll({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then ( (photo) => {
+      res.render('pages/single-photo', {
+        "photo": photo
+      });
+    });
 });
 
 router.get('/new', (req, res) => {
@@ -21,7 +31,6 @@ router.get('/new', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body.photo);
   Photo.create({
     author: req.body.author,
     link: req.body.link,
