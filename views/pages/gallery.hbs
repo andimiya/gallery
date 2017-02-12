@@ -1,13 +1,30 @@
-<h1>Gallery Page</h1>
+<div class="container">
 
-{{#each photos}}
-
-<div class = "photo">
-  <p>
-  Author: {{author}}<br>
-  Link: {{link}}<br>
-  Description: {{description}}
-  </p>
+<div class="header-menu">
+  <div class="left-header">
+    <h1>_ARCHITEKT</h1>
+  </div>
+  <div class="right-header">
+  </div>
 </div>
 
-{{/each}}
+  <div class="body">
+    <div class="left-column">
+
+    {{#each photos}}
+
+    <div class="photo">
+      <p>
+      Author: {{author}}<br>
+      Link: {{link}}<br>
+      Description: {{description}}
+      </p>
+    </div>
+    {{/each}}
+
+    </div>
+
+    <div class="right-column">
+    </div>
+  </div>
+</div>
