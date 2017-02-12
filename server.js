@@ -5,6 +5,7 @@ const app = express();
 const bp = require('body-parser');
 
 const db = require('./models');
+const { User, Photo } = db;
 
 //bodyparser
 app.use(bp.json());
