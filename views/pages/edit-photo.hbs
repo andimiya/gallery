@@ -1,0 +1,19 @@
+<h1>Edit Article</h1>
+
+{{#each photo}}
+
+<form action="/articles/{{id}}?_method=PUT" method="POST">
+  Author:<br>
+  <input type="text" name="author" value="{{author}}">
+  <br>
+  Link:<br>
+  <input type="text" name="link" value="{{link}}">
+  <br>
+  Description:<br>
+  <input type="text" name="description" value="{{description}}">
+  <br>
+  <br>
+  <input type="submit">
+</form>
+
+{{/each}}

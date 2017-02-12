@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  console.log(req.params.id, 'req param id');
   Photo.findAll({
     where: {
       id: req.params.id
@@ -21,6 +20,20 @@ router.get('/:id', (req, res) => {
   })
     .then ( (photo) => {
       res.render('pages/single-photo', {
+        "photo": photo
+      });
+    });
+});
+
+router.get('/:id/edit', (req, res) => {
+  console.log(req.params.id, 'req param id');
+  Photo.findAll({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then ( (photo) => {
+      res.render('pages/edit-photo', {
         "photo": photo
       });
     });
@@ -39,6 +52,10 @@ router.post('/', (req, res) => {
     .then( (photos) => {
       res.redirect('/gallery');
     });
+});
+
+router.put('/:id', (req, res) => {
+
 });
 
 module.exports = router;
