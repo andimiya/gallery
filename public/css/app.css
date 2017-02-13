@@ -61,28 +61,56 @@ table {
 
 /* IE7 */
 .container {
-  border: 10px solid red; }
+  border: 10px solid red;
+  width: 960px;
+  margin: 0 auto; }
+
+hr {
+  display: block;
+  height: 1px;
+  width: 800px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
 
 .header-menu {
-  border: 10px solid blue; }
+  border: 10px solid blue;
+  padding: 0 0 20px 0; }
+
+.body {
+  border: 10px solid yellow;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+.hero-image {
+  border: 10px solid brown;
+  height: 350px;
+  width: 960px;
+  box-sizing: border-box; }
+
+.image-grid {
+  border: 10px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex: 0 0 960px; }
+
+.photo {
+  border: 10px solid orange;
+  max-width: 300px;
+  max-height: 200px;
+  box-sizing: border-box;
+  flex: 0 0 960px; }
 
 h1 {
   font-family: 'Arial', sans-serif;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   color: #68636A; }
 
 body {
   font-family: 'Roboto', sans-serif; }
-
-.body {
-  border: 10px solid yellow; }
-
-.photo {
-  border: 10px solid pink; }
-
-.left-column {
-  border: 10px solid green; }
-
-.right-column {
-  border: 10px solid purple; }

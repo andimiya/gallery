@@ -2,6 +2,7 @@
 
 <div class="header-menu">
   <div class="left-header">
+    <hr/>
     <h1>_ARCHITEKT</h1>
   </div>
   <div class="right-header">
@@ -9,22 +10,27 @@
 </div>
 
   <div class="body">
-    <div class="left-column">
+
+
+    <div class="hero">
+      <img src="http://i63.tinypic.com/206zjm8.jpg" class="hero-image">
+    </div>
+
+    <div class="image-grid">
 
     {{#each photos}}
 
-    <div class="photo">
-      <p>
-      Author: {{author}}<br>
-      Link: {{link}}<br>
-      Description: {{description}}
-      </p>
-    </div>
+        <p>
+        <img src="{{link}}" class="photo">
+        <br>
+        Author: {{author}}<br>
+        Description: {{description}}
+        </p>
     {{/each}}
 
     </div>
 
-    <div class="right-column">
-    </div>
+
+
   </div>
 </div>
