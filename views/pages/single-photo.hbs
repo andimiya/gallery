@@ -1,13 +1,12 @@
-<h1>Single Photo</h1>
 
 {{#each photo}}
 
-<div class = "photo">
+<div class = "photo-detail">
   <p>
   Author: {{author}}<br>
-  Link: {{link}}<br>
   Description: {{description}}
   </p>
+  <img src="{{link}}" class="photo">
 </div>
 
 <form action="/gallery/{{id}}/edit" method="GET">
