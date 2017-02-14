@@ -2,60 +2,61 @@
 @import "partials/clearfix";
 
 .container {
-  border: 10px solid red;
+  // border: 10px solid red;
   width: 960px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 hr {
     display: block;
     height: 1px;
-    width: 800px;
+    width: 960px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin: 0.7em 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .header-menu {
-  border: 10px solid blue;
+  // border: 10px solid blue;
   padding: 0 0 20px 0;
-}
-
-.body {
-  border: 10px solid yellow;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image {
-  border: 10px solid brown;
-  height: 350px;
-  width: 960px;
   box-sizing: border-box;
 }
 
+.body {
+  // border: 10px solid yellow;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hero-image {
+  // border: 10px solid brown;
+  height: 349px;
+  width: 960px;
+  box-sizing: border-box;
+  // padding: 0 0 10px 0;
+}
+
 .image-grid {
-  border: 10px solid black;
+  // border: 10px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
-  flex: 0 0 960px;
+  flex: 1 0 960px;
+  // padding: 10px 0 0 0;
 }
 
 .photo {
-  border: 10px solid orange;
-  max-width: 300px;
-  max-height: 200px;
-  // width: auto;
-  // height: auto;
+  width: 306px;
+  height: 215px;
   box-sizing: border-box;
-  flex: 0 0 960px;
+  flex: 1 0 960px;
 }
-
 
 h1 {
   font-family: 'Arial', sans-serif;
@@ -65,7 +66,8 @@ h1 {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
+  color: #a4a4a5;
+  font-size: 13px;
 }
-
 

@@ -15,17 +15,21 @@
     <div class="hero">
       <img src="http://i63.tinypic.com/206zjm8.jpg" class="hero-image">
     </div>
+    <hr/>
 
     <div class="image-grid">
 
     {{#each photos}}
 
-        <p>
-        <img src="{{link}}" class="photo">
+        <div class="photo-container">
+        <a href="/gallery/{{id}}">
+          <img src="{{link}}" class="photo">
+        </a>
         <br>
         Author: {{author}}<br>
         Description: {{description}}
-        </p>
+        </div>
+
     {{/each}}
 
     </div>
