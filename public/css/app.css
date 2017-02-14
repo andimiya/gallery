@@ -62,7 +62,7 @@ table {
 /* IE7 */
 .container {
   width: 960px;
-  margin: 0 auto;
+  margin: 60px auto;
   box-sizing: border-box; }
 
 hr {
@@ -76,8 +76,24 @@ hr {
   box-sizing: border-box; }
 
 .header-menu {
-  padding: 0 0 20px 0;
-  box-sizing: border-box; }
+  padding: 0 0 20px 0; }
+
+.left-header {
+  display: inline-block;
+  width: 500px; }
+
+.right-header {
+  font-family: 'Arial', sans-serif;
+  color: #a4a4a5;
+  font-size: 13px;
+  width: 400px;
+  float: right;
+  display: inline-block;
+  vertical-align: center;
+  padding: 0 0 0 20px;
+  border-left: 1px solid #ccc;
+  height: 50px;
+  margin: 20px 0 0 0; }
 
 .body {
   display: flex;
@@ -88,7 +104,8 @@ hr {
 .hero-image {
   height: 349px;
   width: 960px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 30px 0 0 0; }
 
 .image-grid {
   display: flex;
@@ -96,6 +113,10 @@ hr {
   justify-content: space-between;
   box-sizing: border-box;
   flex: 1 0 960px; }
+
+.photo-container {
+  line-height: 16px;
+  margin: 0 0 5px 0; }
 
 .photo {
   width: 306px;
