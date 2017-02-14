@@ -15,6 +15,10 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/new', (req, res) => {
+  res.render('pages/new-photo');
+});
+
 router.get('/:id', (req, res) => {
   Photo.findAll({
     where: {
@@ -29,7 +33,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/:id/edit', (req, res) => {
-  console.log(req.params.id, 'req param id');
   Photo.findAll({
     where: {
       id: req.params.id
@@ -40,10 +43,6 @@ router.get('/:id/edit', (req, res) => {
         "photo": photo
       });
     });
-});
-
-router.get('/new', (req, res) => {
-  res.render('pages/new-photo');
 });
 
 router.post('/', (req, res) => {
