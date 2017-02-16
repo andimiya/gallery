@@ -115,6 +115,8 @@ hr {
   flex: 1 0 960px; }
 
 .photo-detail {
+  height: 450px;
+  width: 625px;
   margin-top: 40px;
   font-weight: bold;
   font-size: 15px; }
@@ -142,6 +144,13 @@ hr {
   height: 215px;
   box-sizing: border-box;
   flex: 1 0 960px; }
+
+.caption {
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 20px;
+  color: #888888; }
 
 h1 {
   font-family: 'Arial', sans-serif;
