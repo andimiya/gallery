@@ -1,24 +1,27 @@
 
-{{#each photo}}
-
 <div class="detail-photo-container">
   <div class="photo-detail">
     <p>
-    {{description}} - {{link}}
+    {{photo.description}} - {{photo.link}}
     </p>
     </br>
-    <img src="{{link}}" class="photo-large">
+    <img src="{{photo.link}}" class="photo-large">
   </div>
   <div class="right-side-column">
+
+  {{#each photos}}
+
     <img src="{{link}}" class="photo-right-column">
+
+  {{/each}}
+
   </div>
 </div>
-<form action="/gallery/{{id}}/edit" method="GET">
+<form action="/gallery/{{photo.id}}/edit" method="GET">
   <button type="submit">Edit</button>
 </form>
 
-<form action="/gallery/{{id}}?_method=DELETE" method="POST">
+<form action="/gallery/{{photo.id}}?_method=DELETE" method="POST">
   <button type="submit">Delete</button>
 </form>
 
-{{/each}}

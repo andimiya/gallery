@@ -8,7 +8,7 @@ router.use(methodOverride('_method'));
 
 router.get('/', (req, res) => {
   Photo.findAll()
-    .then( (photos) => {
+    .then( photos => {
       res.render('pages/gallery', {
         "photos": photos
       });
@@ -20,14 +20,13 @@ router.get('/new', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Photo.findAll({
-    where: {
-      id: req.params.id
-    }
-  })
-    .then ( (photo) => {
+  Promise.all([
+    Photo.findById(req.params.id),
+    Photo.findAll()
+    ])
+      .then ( results => {
       res.render('pages/single-photo', {
-        "photo": photo
+        "photo": results[0], "photos": results[1]
       });
     });
 });
@@ -38,7 +37,7 @@ router.get('/:id/edit', (req, res) => {
       id: req.params.id
     }
   })
-    .then ( (photo) => {
+    .then ( photo => {
       res.render('pages/edit-photo', {
         "photo": photo
       });
@@ -51,7 +50,7 @@ router.post('/', (req, res) => {
     link: req.body.link,
     description: req.body.description
   })
-    .then( (photos) => {
+    .then( photos => {
       res.redirect('/gallery');
     });
 });
@@ -66,7 +65,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then( (photo) => {
+    .then( photo => {
       res.redirect('/gallery');
     });
 });
@@ -77,7 +76,7 @@ router.delete('/:id', (req, res) => {
     id: req.params.id
   }
 })
-  .then ( (photo) => {
+  .then ( photo => {
     res.redirect('/gallery');
   });
 });
