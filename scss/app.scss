@@ -97,11 +97,15 @@ hr {
   box-sizing: border-box;
 }
 
+.right-side-column {
+  margin: 70px 0 0 20px;
+}
+
 .photo-right-column {
   width: 306px;
   height: 215px;
   box-sizing: border-box;
-  margin: 70px 0 0 20px;
+  // margin: 70px 0 0 20px;
 }
 
 .photo {
@@ -117,6 +121,12 @@ hr {
   font-weight: normal;
   margin-top: 20px;
   color: #888888;
+}
+
+.right-column-caption {
+  margin: 10px 0 20px 0;
+  font-weight: bold;
+
 }
 
 h1 {
