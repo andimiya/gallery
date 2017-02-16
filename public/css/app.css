@@ -94,6 +94,9 @@ hr {
   border-left: 1px solid #ccc;
   height: 50px;
   margin: 20px 0 0 0; }
+  @media only screen and (max-width: 768px) {
+    .right-header {
+      display: none; } }
 
 .body {
   display: flex;
@@ -135,6 +138,9 @@ hr {
 
 .right-side-column {
   margin: 70px 0 0 20px; }
+  @media only screen and (max-width: 768px) {
+    .right-side-column {
+      display: none; } }
 
 .photo-right-column {
   width: 306px;
