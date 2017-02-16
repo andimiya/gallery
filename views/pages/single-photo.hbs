@@ -22,8 +22,9 @@
   <div class="right-side-column">
 
   {{#each photos}}
-
-    <img src="{{link}}" class="photo-right-column">
+    <a href="/gallery/{{id}}">
+      <img src="{{link}}" class="photo-right-column">
+    </a>
     <div class="right-column-caption">{{description}} - {{link}}</div>
 
   {{/each}}

@@ -22,7 +22,7 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
   Promise.all([
     Photo.findById(req.params.id),
-    Photo.findAll()
+    Photo.findAll({ limit: 3 })
     ])
       .then ( results => {
       res.render('pages/single-photo', {
