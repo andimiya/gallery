@@ -6,6 +6,18 @@
     </p>
     </br>
     <img src="{{photo.link}}" class="photo-large">
+    <div class="button-container">
+      <div class="button">
+        <form action="/gallery/{{photo.id}}/edit" method="GET">
+          <button type="submit">Edit</button>
+        </form>
+      </div>
+      <div class="button">
+        <form action="/gallery/{{photo.id}}?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
     <div class="caption">
       Sirene is a luxurious restaurant placed at Aker Brygge, where Oslo meets the fjord. We wanted to bring in aspects of nature into this very urban area.
       </br>
@@ -31,11 +43,5 @@
 
   </div>
 </div>
-<form action="/gallery/{{photo.id}}/edit" method="GET">
-  <button type="submit">Edit</button>
-</form>
 
-<form action="/gallery/{{photo.id}}?_method=DELETE" method="POST">
-  <button type="submit">Delete</button>
-</form>
 

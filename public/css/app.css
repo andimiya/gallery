@@ -64,6 +64,10 @@ table {
   width: 960px;
   margin: 60px auto;
   box-sizing: border-box; }
+  @media only screen and (max-width: 768px) {
+    .container {
+      margin: 40px auto;
+      width: 400px; } }
 
 hr {
   display: block;
@@ -74,6 +78,9 @@ hr {
   margin: 0.7em 0;
   padding: 0;
   box-sizing: border-box; }
+  @media only screen and (max-width: 768px) {
+    hr {
+      display: none; } }
 
 .header-menu {
   padding: 0 0 20px 0; }
@@ -117,6 +124,10 @@ hr {
   box-sizing: border-box;
   flex: 1 0 960px; }
 
+.detail-photo-container {
+  display: flex;
+  box-sizing: border-box; }
+
 .photo-detail {
   height: 450px;
   width: 625px;
@@ -124,17 +135,40 @@ hr {
   font-weight: bold;
   font-size: 15px; }
 
+.button-container {
+  display: flex;
+  margin-top: 20px; }
+
+.button {
+  -webkit-font-smoothing: antialiased;
+  background-color: black;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 100;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 1px;
+  color: white;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  transition: all 0.1s ease-out; }
+  .button:hover {
+    background-color: gray;
+    color: #fff; }
+
 .photo-large {
   height: 450px;
   width: 625px; }
+  @media only screen and (max-width: 768px) {
+    .photo-large {
+      width: 100%;
+      height: 60%; } }
 
 .photo-container {
   line-height: 16px;
   margin: 0 0 5px; }
-
-.detail-photo-container {
-  display: flex;
-  box-sizing: border-box; }
 
 .right-side-column {
   margin: 70px 0 0 20px; }
