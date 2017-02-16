@@ -1,14 +1,18 @@
 
 {{#each photo}}
 
-<div class = "photo-detail">
-  <p>
-  Author: {{author}}<br>
-  Description: {{description}}
-  </p>
-  <img src="{{link}}" class="photo">
+<div class="detail-photo-container">
+  <div class="photo-detail">
+    <p>
+    {{description}} - {{link}}
+    </p>
+    </br>
+    <img src="{{link}}" class="photo-large">
+  </div>
+  <div class="right-side-column">
+    <img src="{{link}}" class="photo-right-column">
+  </div>
 </div>
-
 <form action="/gallery/{{id}}/edit" method="GET">
   <button type="submit">Edit</button>
 </form>

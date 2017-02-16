@@ -86,7 +86,7 @@ hr {
   font-family: 'Arial', sans-serif;
   color: #a4a4a5;
   font-size: 13px;
-  width: 400px;
+  width: 306px;
   float: right;
   display: inline-block;
   vertical-align: center;
@@ -114,9 +114,28 @@ hr {
   box-sizing: border-box;
   flex: 1 0 960px; }
 
+.photo-detail {
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 15px; }
+
+.photo-large {
+  height: 450px;
+  width: 625px; }
+
 .photo-container {
   line-height: 16px;
   margin: 0 0 5px; }
+
+.detail-photo-container {
+  display: flex;
+  box-sizing: border-box; }
+
+.photo-right-column {
+  width: 306px;
+  height: 215px;
+  box-sizing: border-box;
+  margin: 70px 0 0 20px; }
 
 .photo {
   width: 306px;
