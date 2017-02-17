@@ -15,7 +15,7 @@ app.use(bp.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use('/gallery', gallery);
+app.use('/', gallery);
 app.use('/', login);
 app.use('/', secret);
 
@@ -29,7 +29,12 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-  res.render('index');
+  Photo.findAll()
+    .then( photos => {
+      res.render('pages/gallery', {
+        "photos": photos
+      });
+    });
 });
 
 app.listen(3000, function() {

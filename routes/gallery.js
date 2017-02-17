@@ -6,15 +6,6 @@ const methodOverride = require('method-override');
 
 router.use(methodOverride('_method'));
 
-router.get('/', (req, res) => {
-  Photo.findAll()
-    .then( photos => {
-      res.render('pages/gallery', {
-        "photos": photos
-      });
-    });
-});
-
 router.get('/new', (req, res) => {
   res.render('pages/new-photo');
 });
@@ -52,7 +43,7 @@ router.post('/', (req, res) => {
     description: req.body.description
   })
     .then( photos => {
-      res.redirect('/gallery');
+      res.redirect('/');
     });
 });
 
@@ -67,7 +58,7 @@ router.put('/:id', (req, res) => {
     }
   })
     .then( photo => {
-      res.redirect('/gallery');
+      res.redirect('/');
     });
 });
 
@@ -78,7 +69,7 @@ router.delete('/:id', (req, res) => {
   }
 })
   .then ( photo => {
-    res.redirect('/gallery');
+    res.redirect('/');
   });
 });
 

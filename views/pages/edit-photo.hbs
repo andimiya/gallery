@@ -2,7 +2,7 @@
 
 {{#each photo}}
 
-<form action="/gallery/{{id}}?_method=PUT" method="POST">
+<form action="/{{id}}?_method=PUT" method="POST">
   Author:<br>
   <input type="text" name="author" value="{{author}}">
   <br>
