@@ -1,5 +1,7 @@
 const express = require('express');
 const gallery = require('./routes/gallery');
+const login = require('./routes/login');
+const secret = require('./routes/secret');
 const handlebars = require('express-handlebars');
 const app = express();
 const bp = require('body-parser');
@@ -14,6 +16,8 @@ app.use(bp.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.use('/gallery', gallery);
+app.use('/', login);
+app.use('/', secret);
 
 //handlebars
 const hbs = handlebars.create({

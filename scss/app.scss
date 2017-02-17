@@ -1,5 +1,6 @@
 @import "partials/reset";
 @import "partials/clearfix";
+@import "forms";
 
 .container {
   // border: 10px solid red;
@@ -132,7 +133,9 @@ hr {
 
 .photo-container {
   line-height: 16px;
-  margin: 0 0 5px;
+  margin: 0 0 40px 0;
+  width: 306px;
+  height: 215px;
 }
 
 
@@ -170,7 +173,6 @@ hr {
 .right-column-caption {
   margin: 10px 0 20px 0;
   font-weight: bold;
-
 }
 
 h1 {
@@ -184,6 +186,4 @@ body {
   font-family: 'Arial', sans-serif;
   color: #a4a4a5;
   font-size: 13px;
-
 }
-

@@ -44,6 +44,7 @@ router.get('/:id/edit', (req, res) => {
     });
 });
 
+
 router.post('/', (req, res) => {
   Photo.create({
     author: req.body.author,

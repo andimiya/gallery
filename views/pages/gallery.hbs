@@ -9,15 +9,15 @@
     {{#each photos}}
 
         <div class="photo-container">
-        <a href="/gallery/{{id}}">
-          <img src="{{link}}" class="photo">
-        </a>
-        <br>
-        Author: {{author}}<br>
-        Description: {{description}}
+          <a href="/gallery/{{id}}">
+            <img src="{{link}}" class="photo">
+          </a>
+          <br>
+          {{description}} - {{author}}
         </div>
 
     {{/each}}
 
     </div>
+
 

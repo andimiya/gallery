@@ -60,6 +60,9 @@ table {
   zoom: 1; }
 
 /* IE7 */
+.password {
+  font-size: 20px; }
+
 .container {
   width: 960px;
   margin: 60px auto;
@@ -165,7 +168,9 @@ hr {
 
 .photo-container {
   line-height: 16px;
-  margin: 0 0 5px; }
+  margin: 0 0 40px 0;
+  width: 306px;
+  height: 215px; }
 
 .right-side-column {
   margin: 70px 0 0 20px; }
