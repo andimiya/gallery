@@ -7,14 +7,14 @@
     </br>
     <img src="{{photo.link}}" class="photo-large">
     <div class="button-container">
-      <div class="button">
+      <div class="button-one">
         <form action="/gallery/{{photo.id}}/edit" method="GET">
-          <button type="submit">Edit</button>
+          <button class="button" type="submit">Edit</button>
         </form>
       </div>
-      <div class="button">
+      <div class="button-two">
         <form action="/gallery/{{photo.id}}?_method=DELETE" method="POST">
-          <button type="submit">Delete</button>
+          <button class="button" type="submit">Delete</button>
         </form>
       </div>
     </div>

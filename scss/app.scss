@@ -96,10 +96,11 @@ hr {
 .button-container {
   display: flex;
   margin-top: 20px;
+
 }
 
 .button {
-  -webkit-font-smoothing: antialiased;
+  // -webkit-font-smoothing: antialiased;
   background-color: black;
   border: none;
   color: #fff;
@@ -107,11 +108,10 @@ hr {
   font-size: 14px;
   font-weight: 100;
   text-decoration: none;
-  user-select: none;
+  // user-select: none;
   letter-spacing: 1px;
   color: white;
-  padding: 20px 40px;
-  text-transform: uppercase;
+  padding: 10px 20px;
   transition: all 0.1s ease-out;
 
   &:hover {
