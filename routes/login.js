@@ -13,19 +13,21 @@ const sess = {
   secret: CONFIG.development.secret
 };
 
-const authenticate = (username, password) => {
-  // get user data from the DB
-  const { USER } = CONFIG;
-  const { PASSWORD, USERNAME } = USER;
+// const authenticate = (username, password) => {
+//   // get user data from the DB
+//   const { USER } = CONFIG;
+//   const { PASSWORD, USERNAME } = USER;
 
-  // check if the user is authenticated or not
-  return ( username === USERNAME && password === PASSWORD );
-};
+//   // check if the user is authenticated or not
+//   return ( username === USERNAME && password === PASSWORD );
+// };
 
 //This new LocalStrategy is how passport authenticates
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    User.findOne({ where: {username: username }})
+    User.findOne({ where: {
+      username: username,
+      password: password }})
       .then (function(user) {
         if (!user) {
           return done(null, false, { message: 'Incorrect username or password' });
