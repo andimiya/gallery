@@ -1,7 +1,6 @@
 const express = require('express');
 const gallery = require('./routes/gallery');
 const login = require('./routes/login');
-const secret = require('./routes/secret');
 const handlebars = require('express-handlebars');
 const app = express();
 const bp = require('body-parser');
@@ -17,7 +16,6 @@ app.use(express.static('public'));
 
 app.use('/', gallery);
 app.use('/', login);
-app.use('/', secret);
 
 //handlebars
 const hbs = handlebars.create({
@@ -31,6 +29,7 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) => {
   Photo.findAll()
     .then( photos => {
+      console.log(photos);
       res.render('pages/gallery', {
         "photos": photos
       });

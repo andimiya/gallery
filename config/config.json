@@ -4,7 +4,8 @@
     "password": null,
     "database": "gallery",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "secret": "mrkitty"
   },
   "test": {
     "username": "root",
@@ -19,8 +20,5 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
-  },
-  "SESSION_SECRET": "keyboard_cat",
-  "USERNAME": "sumgai",
-  "PASSWORD": "hello"
+  }
 }

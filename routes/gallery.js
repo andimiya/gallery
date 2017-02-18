@@ -10,6 +10,20 @@ router.get('/new', (req, res) => {
   res.render('pages/new-photo');
 });
 
+router.get('/create', (req, res) => {
+  res.render('pages/create-account');
+});
+
+router.post('/create', (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password
+  })
+    .then( user => {
+      res.redirect('/');
+    });
+});
+
 router.get('/:id', (req, res) => {
   Promise.all([
     Photo.findById(req.params.id),
@@ -35,8 +49,7 @@ router.get('/:id/edit', (req, res) => {
     });
 });
 
-
-router.post('/', (req, res) => {
+router.post('/new', (req, res) => {
   Photo.create({
     author: req.body.author,
     link: req.body.link,
