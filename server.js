@@ -11,7 +11,6 @@ const passport = require('passport');
 const gallery = require('./routes/gallery');
 const login = require('./routes/login');
 
-
 const sess = {
   secret: CONFIG.development.secret
 };

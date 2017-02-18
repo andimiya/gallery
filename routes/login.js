@@ -13,15 +13,6 @@ const sess = {
   secret: CONFIG.development.secret
 };
 
-// const authenticate = (username, password) => {
-//   // get user data from the DB
-//   const { USER } = CONFIG;
-//   const { PASSWORD, USERNAME } = USER;
-
-//   // check if the user is authenticated or not
-//   return ( username === USERNAME && password === PASSWORD );
-// };
-
 //This new LocalStrategy is how passport authenticates
 passport.use(new LocalStrategy(
   function(username, password, done) {
@@ -42,7 +33,6 @@ passport.use(new LocalStrategy(
 
 //add a user to the db
 passport.serializeUser((user, done) => {
-  console.log(user);
   // User is passed in from Local Strategy - only runs when a user first authenticates
   // User's session has is hashed
   // User is attached to req.User
@@ -73,24 +63,3 @@ router.get('/logout', (req, res) => {
 
 
 module.exports = router;
-
-
-// THIS IS NOT REAL CODE IT WILL BREAK SHIT
-// app.post('/login', (req, res) => {
-//   if (!req.body.email || !req.body.password) {
-//     res.redirect('/login');
-//   }
-
-//   User.find({
-//     email: req.body.email,
-//     password: req.body.password,
-//   })
-//   .then((foundUser) => {
-//     if (!foundUser) {
-//       return res.redirect('/login');
-//     }
-//     const cookie = session.create(secret, req.user.pssword);
-
-
-//   });
-// });

@@ -7,23 +7,27 @@ const isAuth = require('../isAuth');
 
 router.use(methodOverride('_method'));
 
+router.get('/', (req, res) => {
+  res.render('pages/gallery');
+});
+
 router.get('/new', isAuth, (req, res) => {
   res.render('pages/new-photo');
 });
 
-// router.get('/create', (req, res) => {
-//   res.render('pages/create-account');
-// });
+router.get('/new-user', (req, res) => {
+  res.render('pages/create-account');
+});
 
-// router.post('/create', (req, res) => {
-//   User.create({
-//     username: req.body.username,
-//     password: req.body.password
-//   })
-//     .then( user => {
-//       res.redirect('/');
-//     });
-// });
+router.post('/new-user', (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password
+  })
+    .then( user => {
+      res.redirect('/');
+    });
+});
 
 router.get('/:id', (req, res) => {
   Promise.all([
