@@ -3,26 +3,27 @@ const router = express.Router();
 const db = require('../models');
 const { User, Photo } = db;
 const methodOverride = require('method-override');
+const isAuth = require('../isAuth');
 
 router.use(methodOverride('_method'));
 
-router.get('/new', (req, res) => {
+router.get('/new', isAuth, (req, res) => {
   res.render('pages/new-photo');
 });
 
-router.get('/create', (req, res) => {
-  res.render('pages/create-account');
-});
+// router.get('/create', (req, res) => {
+//   res.render('pages/create-account');
+// });
 
-router.post('/create', (req, res) => {
-  User.create({
-    username: req.body.username,
-    password: req.body.password
-  })
-    .then( user => {
-      res.redirect('/');
-    });
-});
+// router.post('/create', (req, res) => {
+//   User.create({
+//     username: req.body.username,
+//     password: req.body.password
+//   })
+//     .then( user => {
+//       res.redirect('/');
+//     });
+// });
 
 router.get('/:id', (req, res) => {
   Promise.all([
@@ -36,7 +37,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', isAuth, (req, res) => {
   Photo.findAll({
     where: {
       id: req.params.id
@@ -49,7 +50,7 @@ router.get('/:id/edit', (req, res) => {
     });
 });
 
-router.post('/new', (req, res) => {
+router.post('/new', isAuth, (req, res) => {
   Photo.create({
     author: req.body.author,
     link: req.body.link,
@@ -60,7 +61,7 @@ router.post('/new', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', isAuth, (req, res) => {
   Photo.update(
   { author: req.body.author,
     link: req.body.link,
@@ -75,7 +76,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', isAuth, (req, res) => {
   Photo.destroy(
   { where: {
     id: req.params.id
