@@ -19,16 +19,6 @@ router.get('/new-user', (req, res) => {
   res.render('pages/create-account');
 });
 
-router.post('/new-user', (req, res) => {
-  User.create({
-    username: req.body.username,
-    password: req.body.password
-  })
-    .then( user => {
-      res.redirect('/');
-    });
-});
-
 router.get('/:id', (req, res) => {
   Promise.all([
     Photo.findById(req.params.id),
@@ -61,6 +51,16 @@ router.post('/new', isAuth, (req, res) => {
     description: req.body.description
   })
     .then( photos => {
+      res.redirect('/');
+    });
+});
+
+router.post('/new-user', (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password
+  })
+    .then( user => {
       res.redirect('/');
     });
 });
