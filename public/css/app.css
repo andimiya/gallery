@@ -96,6 +96,14 @@ hr {
     .right-header {
       display: none; } }
 
+.login-button {
+  display: flex;
+  margin: 20px 200px 20px 0; }
+
+.logout-button {
+  display: flex;
+  margin: 20px 100px 20px 0; }
+
 .password {
   font-size: 20px; }
 
