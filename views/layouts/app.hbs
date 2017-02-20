@@ -7,10 +7,18 @@
       <h1>_ARCHITEKT</h1>
     </div>
       <div class="right-header">Welcome to this online portfolio. We are a small group of passionate designers and architects looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architekt Wordpress Theme.
-        <div class="login-button">Login</div>
-        <div class="logout-button">Log Out</div>
-      </div>
+{{!--         {{#if user}}
+ --}}        Hello {{user.username}}
+        {{!-- {{else}} --}}
+        Please Log In
 
+        <form action="/login" method="GET" class="login-button">
+          <input type="submit" value="Login"/>
+        </form>
+        <form action="/logout" method="post" class="logout-button">
+          <input type="submit" value="Log Out"/>
+        </form>
+      </div>
     </div>
     {{{body}}}
   </div>

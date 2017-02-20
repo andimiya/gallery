@@ -13,6 +13,8 @@ const sess = {
   secret: CONFIG.development.secret
 };
 
+
+
 //This new LocalStrategy is how passport authenticates
 passport.use(new LocalStrategy(
   function(username, password, done) {
@@ -46,6 +48,10 @@ passport.deserializeUser((user, done) => {
 
 router.get('/login', (req, res) => {
   res.render('./pages/login');
+});
+
+router.get('/profile', (req, res) => {
+  res.render('profile', { username: req.user.username });
 });
 
 router.post('/login',

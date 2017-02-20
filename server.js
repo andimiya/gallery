@@ -42,10 +42,18 @@ app.get('/', (req, res) => {
   Photo.findAll()
     .then( photos => {
       res.render('pages/gallery', {
-        "photos": photos
+        "photos": photos,
       });
     });
 });
+
+
+// function loggedIn(req, res, next) {
+//     if (req.user) {
+//       console.log(req.user.username, 'req user');
+//         res.render({ "user": req.user.username });
+//     }
+// }
 
 app.listen(3000, function() {
   console.log('Listening on 3000');
