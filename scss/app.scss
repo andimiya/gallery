@@ -58,7 +58,7 @@
 
 .button {
   // -webkit-font-smoothing: antialiased;
-  background-color: black;
+  background-color: gray;
   border: none;
   color: #fff;
   display: inline-block;
@@ -72,7 +72,7 @@
   transition: all 0.1s ease-out;
 
   &:hover {
-    background-color: gray;
+    background-color: black;
     color: #fff;
   }
 }

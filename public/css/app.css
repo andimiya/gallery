@@ -101,10 +101,10 @@ hr {
   justify-content: flex-end; }
 
 .logged-in {
-  margin: 20px 100px 0 0; }
+  margin: 20px 95px 0 0; }
 
 .logout-button {
-  margin: 20px 100px 0 0; }
+  margin: 20px 30px 0 0; }
 
 .password {
   font-size: 20px; }
@@ -153,7 +153,7 @@ hr {
   margin-top: 20px; }
 
 .button {
-  background-color: black;
+  background-color: gray;
   border: none;
   color: #fff;
   display: inline-block;
@@ -165,7 +165,7 @@ hr {
   padding: 10px 20px;
   transition: all 0.1s ease-out; }
   .button:hover {
-    background-color: gray;
+    background-color: black;
     color: #fff; }
 
 .photo-large {
