@@ -61,7 +61,7 @@ router.post('/login',
   })
 );
 
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   //Passport attaches a logout method to 'req'
   req.logout();
   res.redirect('/login');

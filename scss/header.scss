@@ -43,20 +43,21 @@ hr {
   margin: 20px 0 0 0;
 }
 
-.logged-in {
-  display: block;
-  margin: 20px 0 0 0;
+#horizontal-menu {
+  display: flex;
+  justify-content: flex-end;
+
 }
 
-.login-button {
-  display: block;
-  margin: 20px 200px 20px 0;
+.logged-in {
+  // display: flex;
   // float: right;
+  margin: 20px 100px 0 0;
 }
 
 .logout-button {
-  display: block;
-  float: right;
-  margin: 0 20px 0 0;
+  // display: flex;
+  // float: right;
+  margin: 20px 100px 0 0;
   // float: right;
 }
