@@ -96,13 +96,18 @@ hr {
     .right-header {
       display: none; } }
 
+.logged-in {
+  display: block;
+  margin: 20px 0 0 0; }
+
 .login-button {
-  display: flex;
+  display: block;
   margin: 20px 200px 20px 0; }
 
 .logout-button {
-  display: flex;
-  margin: 20px 100px 20px 0; }
+  display: block;
+  float: right;
+  margin: 0 20px 0 0; }
 
 .password {
   font-size: 20px; }
@@ -126,7 +131,7 @@ hr {
   height: 349px;
   width: 960px;
   box-sizing: border-box;
-  margin: 30px 0 0 0; }
+  margin: 60px 0 0 0; }
 
 .image-grid {
   display: flex;

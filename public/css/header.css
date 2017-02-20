@@ -34,10 +34,15 @@ hr {
     .right-header {
       display: none; } }
 
+.logged-in {
+  display: block;
+  margin: 20px 0 0 0; }
+
 .login-button {
-  display: flex;
+  display: block;
   margin: 20px 200px 20px 0; }
 
 .logout-button {
-  display: flex;
-  margin: 20px 100px 20px 0; }
+  display: block;
+  float: right;
+  margin: 0 20px 0 0; }
