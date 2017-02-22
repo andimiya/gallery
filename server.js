@@ -38,7 +38,7 @@ const hbs = handlebars.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-app.get('/', loggedIn, (req, res) => {
+app.get('/', (req, res) => {
   Photo.findAll()
     .then( photos => {
       res.render('pages/gallery', {
@@ -50,7 +50,7 @@ app.get('/', loggedIn, (req, res) => {
 function loggedIn(req, res, next) {
   if (req.user) {
     console.log(req.user.username, 'req user');
-    res.render('pages/gallery', {
+    res.render( {
       "username": req.user.username
     });
   }

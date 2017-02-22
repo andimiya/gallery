@@ -8,7 +8,12 @@ const isAuth = require('../isAuth');
 router.use(methodOverride('_method'));
 
 router.get('/', (req, res) => {
-  res.render('pages/gallery');
+  Photo.findAll()
+    .then( photos => {
+      res.render('pages/gallery', {
+        "photos": photos,
+      });
+    });
 });
 
 router.get('/new', isAuth, (req, res) => {
