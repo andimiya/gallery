@@ -16,6 +16,11 @@
       <div class="logged-in">
         {{#if username}}
         Logged in as: {{username}}
+        <div class="add-photo-button">
+          <form action="/gallery/new" method="GET">
+          <input type="submit" value="Add Photo"/>
+          </form>
+        </div>
         {{else}}
         <form action="/login" method="GET">
           <input type="submit" value="Login"/>
@@ -25,6 +30,11 @@
       <div class="logout-button">
         <form action="/logout" method="POST">
         <input type="submit" value="Log Out"/>
+        </form>
+      </div>
+      <div class="new-user-button">
+        <form action="/gallery/new-user" method="GET">
+        <input type="submit" value="Create Account"/>
         </form>
       </div>
     </div>

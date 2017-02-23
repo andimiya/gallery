@@ -22,9 +22,7 @@ router.get('/new', isAuth, (req, res) => {
 });
 
 router.get('/new-user', (req, res) => {
-  res.render('pages/create-account', {
-     "username": req.user.username
-  });
+  res.render('pages/create-account');
 });
 
 router.get('/:id', (req, res) => {
