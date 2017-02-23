@@ -7,7 +7,7 @@ function setUsername(req, res, next) {
   }
   else {
     res.locals.username = null;
-    res.redirect('/login');
+    next();
   }
 }
 
