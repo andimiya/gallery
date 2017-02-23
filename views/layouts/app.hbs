@@ -12,32 +12,34 @@
       <div class="right-header">Welcome to this online portfolio. We are a small group of passionate designers and architects looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architekt Wordpress Theme.
       </div>
 
-    <div id="horizontal-menu">
-      <div class="logged-in">
-        {{#if username}}
-        Logged in as: {{username}}
-        <div class="add-photo-button">
-          <form action="/gallery/new" method="GET">
-          <input type="submit" value="Add Photo"/>
-          </form>
-        </div>
-        <div class="logout-button">
-          <form action="/logout" method="POST">
-          <input type="submit" value="Log Out"/>
-          </form>
-        </div>
-        {{else}}
-        <form action="/login" method="GET">
-          <input type="submit" value="Login"/>
+    <ul id="horizontal-menu">
+      <li>
+        <form action="/gallery/new" method="GET">
+          <button class="menu-button">ADD PHOTO</button>
         </form>
-        <div class="new-user-button">
-          <form action="/gallery/new-user" method="GET">
-          <input type="submit" value="Create Account"/>
-          </form>
-        </div>
-        {{/if}}
-      </div>
-    </div>
+      </li>
+      <li class="logged-in">
+        {{#if username}}
+        LOGGED IN AS: {{username}}
+      </li>
+      <li>
+        <form action="/logout" method="POST">
+          <button class="menu-button">LOG OUT</button>
+        </form>
+      </li>
+      {{else}}
+      <li>
+        <form action="/login" method="GET">
+        <button class="menu-button">LOGIN</button>
+        </form>
+      </li>
+      <li>
+        <form action="/gallery/new-user" method="GET">
+        <button class="menu-button">CREATE ACCOUNT</button>
+        </form>
+      </li>
+      {{/if}}
+    </ul>
 
   {{{body}}}
   </div>
