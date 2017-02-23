@@ -5,6 +5,9 @@
 <img src="{{link}}" class="photo-right-column">
 
 <form action="/gallery/{{id}}?_method=PUT" method="POST" class="forms">
+  Title:<br>
+  <input type="text" placeholder="Title" name="title" value="{{title}}">
+  <br>
   Author:<br>
   <input type="text" placeholder="Author" name="author" value="{{author}}">
   <br>

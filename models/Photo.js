@@ -1,15 +1,16 @@
+'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Photo = sequelize.define("Photo", {
+  var Photo = sequelize.define('Photo', {
+    title: DataTypes.STRING,
     author: DataTypes.STRING,
-    link: DataTypes.STRING,
-    description: DataTypes.STRING,
+    url: DataTypes.STRING,
+    description: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        Photo.belongsTo(models.User);
+        // associations can be defined here
       }
     }
   });
-
   return Photo;
 };
