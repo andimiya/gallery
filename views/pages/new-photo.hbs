@@ -1,14 +1,17 @@
-<h1>New Photo Form</h1>
-
+<h2>ADD A NEW PHOTO TO YOUR GALLERY</h2>
+<br>
+<p>Fill in the form below to add a new photo to your gallery. Give it a long description!</p>
+<br>
+<br>
 <form id="form" action="/gallery/new" method="POST">
   Author:<br>
-  <input type="text" name="author">
+  <input type="text" placeholder="Author" name="author">
   <br>
   Link:<br>
-  <input type="text" name="link">
+  <input type="text" placeholder="URL of Your Image" name="link">
   <br>
   Description:<br>
-  <input type="textarea" name="description">
+  <textarea placeholder="Description" rows="10" cols="60" name="description"></textarea>
   <br>
   <br>
   <input type="submit">
