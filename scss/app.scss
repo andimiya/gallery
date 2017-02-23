@@ -138,6 +138,11 @@ h1 {
   color: #68636A
 }
 
+h1 a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   color: #a4a4a5;
