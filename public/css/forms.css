@@ -1,2 +1,45 @@
+h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px; }
+
+.description-text {
+  height: 200px;
+  width: 500px; }
+
+.forms {
+  margin-top: 20px;
+  font-size: 13px; }
+
 .password {
   font-size: 20px; }
+
+textarea, select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 13px; }
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 13px; }
+
+input[type=submit] {
+  width: 50%;
+  background-color: #68636A;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  font-size: 13px; }
+
+input[type=submit]:hover {
+  background-color: black; }

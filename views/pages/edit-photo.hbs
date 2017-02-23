@@ -1,19 +1,23 @@
-<h1>Edit Photo</h1>
+<h2>Edit Photo Details</h2>
 
 {{#each photo}}
 
-<form action="/gallery/{{id}}?_method=PUT" method="POST">
+<img src="{{link}}" class="photo-right-column">
+
+<form action="/gallery/{{id}}?_method=PUT" method="POST" class="forms">
   Author:<br>
-  <input type="text" name="author" value="{{author}}">
+  <input type="text" placeholder="Author" name="author" value="{{author}}">
   <br>
   Link:<br>
-  <input type="text" name="link" value="{{link}}">
+  <input type="text" placeholder="URL of Your Image" name="link" value="{{link}}">
   <br>
-  Description:<br>
-  <input type="text" name="description" value="{{description}}">
+  Description:
+  <br>
+  <textarea placeholder="Description" rows="10" cols="60" name="description">{{description}}</textarea>
   <br>
   <br>
   <input type="submit">
 </form>
 
 {{/each}}
+
