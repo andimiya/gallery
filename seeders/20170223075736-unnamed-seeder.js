@@ -24,6 +24,30 @@ var Photos = [
     description: `Sirene is a luxurious restaurant placed at Aker Brygge, where Oslo meets the fjord. We wanted to bring in aspects of nature into this very urban area. The building is designed with layers of flexible and transparent facades.`,
     createdAt: new Date(),
     updatedAt: new Date()
+  },
+  {
+    title: 'Taipei Street At Night',
+    author: 'Andrea',
+    link: `https://s3.amazonaws.com/web-ready-andrea/taipei-street.png`,
+    description: `Sirene is a luxurious restaurant placed at Aker Brygge, where Oslo meets the fjord. We wanted to bring in aspects of nature into this very urban area. The building is designed with layers of flexible and transparent facades.`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    title: 'Lisbon Sunset Over the Water',
+    author: 'Andrea',
+    link: `https://s3.amazonaws.com/web-ready-andrea/lisbon-sunset-edited+4+2.png`,
+    description: `Sirene is a luxurious restaurant placed at Aker Brygge, where Oslo meets the fjord. We wanted to bring in aspects of nature into this very urban area. The building is designed with layers of flexible and transparent facades.`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    title: 'View of Nepal From the Mountain',
+    author: 'Andrea',
+    link: `https://s3.amazonaws.com/web-ready-andrea/nepal-mt-view.png`,
+    description: `Sirene is a luxurious restaurant placed at Aker Brygge, where Oslo meets the fjord. We wanted to bring in aspects of nature into this very urban area. The building is designed with layers of flexible and transparent facades.`,
+    createdAt: new Date(),
+    updatedAt: new Date()
   }
 ];
 
