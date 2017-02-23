@@ -1,6 +1,16 @@
 Express Gallery
 ===============
 
+## Run On Your Local Machine
+
+1. Run `npm install`
+2. Run `sequelize db:migrate`
+3. Run `sequelize db:seed:all`
+4. Run `gulp`
+5. Load `localhost:3000`
+
+---
+
 Express, Sequelize, HTML5, stored on PostgreSQL
 
 Use the Express, Sequelize, and *almost* any other library or templating engines you want to fulfill the requirements.
