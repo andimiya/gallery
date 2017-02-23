@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const redisStore = require('connect-redis')(session);
 const handlebars = require('express-handlebars');
 const app = express();
 const bp = require('body-parser');
@@ -21,13 +22,17 @@ app.use(bp.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use(session(sess));
+app.use(session({
+  store: new redisStore(),
+  secret: sess.secret
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/gallery', gallery);
 app.use('/', login);
+
 
 //handlebars
 const hbs = handlebars.create({
@@ -38,11 +43,14 @@ const hbs = handlebars.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+let username;
+
 app.get('/', (req, res) => {
   Photo.findAll()
     .then( photos => {
       res.render('pages/gallery', {
         "photos": photos,
+        "username": username
       });
     });
 });

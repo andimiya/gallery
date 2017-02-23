@@ -13,7 +13,7 @@ const sess = {
   secret: CONFIG.development.secret
 };
 
-
+let username;
 
 //This new LocalStrategy is how passport authenticates
 passport.use(new LocalStrategy(
@@ -54,12 +54,24 @@ router.get('/profile', (req, res) => {
   res.render('profile', { username: req.user.username });
 });
 
-router.post('/login',
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-  })
-);
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.redirect('/gallery/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        return next(err);
+      }
+      username = user.username;
+      console.log(user.username);
+      return res.redirect('/gallery');
+    });
+  })(req, res, next);
+});
 
 router.post('/logout', (req, res) => {
   //Passport attaches a logout method to 'req'
