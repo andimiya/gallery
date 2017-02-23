@@ -8,6 +8,7 @@ const db = require('./models');
 const { User, Photo } = db;
 const CONFIG = require('./config/config.json');
 const passport = require('passport');
+const setUsername = require('./setUsername');
 
 const gallery = require('./routes/gallery');
 const login = require('./routes/login');
@@ -30,7 +31,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/gallery', gallery);
+app.use('/gallery', setUsername, gallery);
 app.use('/', login);
 
 
@@ -43,29 +44,14 @@ const hbs = handlebars.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-let username;
-
-app.get('/', (req, res) => {
+app.get('/', setUsername, (req, res) => {
   Photo.findAll()
     .then( photos => {
       res.render('pages/gallery', {
-        "photos": photos,
-        "username": username
+        "photos": photos
       });
     });
 });
-
-function loggedIn(req, res, next) {
-  if (req.user) {
-    console.log(req.user.username, 'req user');
-    res.render( {
-      "username": req.user.username
-    });
-  }
-  else {
-    next();
-  }
-}
 
 app.listen(3000, function() {
   console.log('Listening on 3000');

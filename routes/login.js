@@ -13,8 +13,6 @@ const sess = {
   secret: CONFIG.development.secret
 };
 
-let username;
-
 //This new LocalStrategy is how passport authenticates
 passport.use(new LocalStrategy(
   function(username, password, done) {
@@ -66,8 +64,6 @@ router.post('/login', function(req, res, next) {
       if (err) {
         return next(err);
       }
-      username = user.username;
-      console.log(user.username);
       return res.redirect('/gallery');
     });
   })(req, res, next);

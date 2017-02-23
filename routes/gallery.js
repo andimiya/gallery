@@ -7,27 +7,23 @@ const isAuth = require('../isAuth');
 
 router.use(methodOverride('_method'));
 
-let username;
-
 router.get('/', (req, res) => {
   Photo.findAll()
     .then( photos => {
       res.render('pages/gallery', {
         "photos": photos,
-        "username": username
       });
     });
 });
 
 router.get('/new', isAuth, (req, res) => {
   res.render('pages/new-photo', {
-     "username": username
   });
 });
 
 router.get('/new-user', (req, res) => {
   res.render('pages/create-account', {
-     "username": username
+     "username": req.user.username
   });
 });
 
@@ -40,7 +36,6 @@ router.get('/:id', (req, res) => {
       res.render('pages/single-photo', {
         "photo": results[0],
         "photos": results[1],
-        "username": username
       });
     });
 });
@@ -54,7 +49,6 @@ router.get('/:id/edit', isAuth, (req, res) => {
     .then ( photo => {
       res.render('pages/edit-photo', {
         "photo": photo,
-        "username": username
       });
     });
 });
