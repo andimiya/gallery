@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   var Photo = sequelize.define('Photo', {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
-    url: DataTypes.STRING,
-    description: DataTypes.STRING
+    link: DataTypes.STRING,
+    description: DataTypes.TEXT
   }, {
     classMethods: {
       associate: function(models) {
