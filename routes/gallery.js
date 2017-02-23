@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
     Photo.findAll({ limit: 3 })
     ])
       .then ( results => {
-      res.render('pages/single-photo', {
+      res.render('pages/detail-view', {
         "photo": results[0],
         "photos": results[1],
       });
