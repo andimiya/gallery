@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       });
     })
     .catch( err => {
-      output.html('ERROR');
+      res.render('pages/error');
     });
 });
 
@@ -37,6 +37,9 @@ router.get('/:id', (req, res) => {
       res.render('pages/detail-view', {
         "photo": results[0],
         "photos": results[1],
+      })
+      .catch( err => {
+        res.render('pages/error');
       });
     });
 });
@@ -77,8 +80,8 @@ router.post('/new-user', (req, res) => {
 });
 
 router.put('/:id', isAuth, (req, res) => {
-  Photo.update(
-  { title: req.body.title,
+  Photo.update({
+    title: req.body.title,
     author: req.body.author,
     link: req.body.link,
     description: req.body.description
