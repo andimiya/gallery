@@ -54,6 +54,9 @@ router.get('/:id/edit', isAuth, (req, res) => {
       res.render('pages/edit-photo', {
         "photo": photo,
       });
+    })
+    .catch( err => {
+      res.render('pages/error');
     });
 });
 
@@ -66,6 +69,9 @@ router.post('/new', isAuth, (req, res) => {
   })
     .then( photos => {
       res.redirect('/');
+    })
+    .catch( err => {
+        res.render('pages/error');
     });
 });
 
@@ -76,6 +82,9 @@ router.post('/new-user', (req, res) => {
   })
     .then( user => {
       res.redirect('/');
+    })
+    .catch( err => {
+        res.render('pages/error');
     });
 });
 
@@ -92,6 +101,9 @@ router.put('/:id', isAuth, (req, res) => {
   })
     .then( photo => {
       res.redirect('/');
+    })
+    .catch( err => {
+        res.render('pages/error');
     });
 });
 
@@ -103,6 +115,9 @@ router.delete('/:id', isAuth, (req, res) => {
 })
   .then ( photo => {
     res.redirect('/');
+  })
+  .catch( err => {
+    res.render('pages/error');
   });
 });
 
