@@ -56,6 +56,7 @@ router.get('/:id/edit', isAuth, (req, res) => {
 
 router.post('/new', isAuth, (req, res) => {
   Photo.create({
+    title: req.body.title,
     author: req.body.author,
     link: req.body.link,
     description: req.body.description
@@ -77,7 +78,8 @@ router.post('/new-user', (req, res) => {
 
 router.put('/:id', isAuth, (req, res) => {
   Photo.update(
-  { author: req.body.author,
+  { title: req.body.title,
+    author: req.body.author,
     link: req.body.link,
     description: req.body.description
   },

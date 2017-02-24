@@ -9,6 +9,7 @@ const { User, Photo } = db;
 const CONFIG = require('./config/config.json');
 const passport = require('passport');
 const setUsername = require('./setUsername');
+const errorHandler = require('./errorHandler');
 
 const gallery = require('./routes/gallery');
 const login = require('./routes/login');
@@ -20,6 +21,8 @@ const sess = {
 //bodyparser
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
+
+app.use(errorHandler);
 
 app.use(express.static('public'));
 
