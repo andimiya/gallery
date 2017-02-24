@@ -34,12 +34,12 @@ app.use(passport.session());
 app.use('/gallery', setUsername, gallery);
 app.use('/', login);
 
-
 //handlebars
 const hbs = handlebars.create({
   extname: '.hbs',
   defaultLayout: 'app'
 });
+
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');

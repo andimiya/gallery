@@ -1,4 +1,4 @@
-@import "partials/reset";
+
 @import "partials/clearfix";
 @import "header";
 @import "forms";
@@ -24,18 +24,42 @@
 }
 
 .hero-image {
-  height: 349px;
-  width: 960px;
+  height: 370px;
+  width: 100%;
   box-sizing: border-box;
-  margin: 30px 0 0 0;
+  // margin: 10px 0 0 0;
+
+  //Mobile Size
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.hr-under-hero {
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0.7em 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 .image-grid {
+  // border: 10px solid blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
   flex: 1 0 960px;
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 body {

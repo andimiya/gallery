@@ -5,7 +5,7 @@
 .photo-detail {
   height: 450px;
   width: 625px;
-  margin-top: 40px;
+  margin-top: 10px;
   font-weight: bold;
   font-size: 15px; }
 
@@ -42,7 +42,7 @@
   height: 215px; }
 
 .right-side-column {
-  margin: 70px 0 0 20px; }
+  margin: 55px 0 0 20px; }
   @media only screen and (max-width: 768px) {
     .right-side-column {
       display: none; } }
@@ -62,7 +62,7 @@
   font-family: 'Arial', sans-serif;
   font-size: 12px;
   font-weight: normal;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #888888; }
 
 .right-column-caption {

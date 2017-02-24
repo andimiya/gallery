@@ -18,9 +18,11 @@
           <button class="menu-button">ADD PHOTO</button>
         </form>
       </li>
-      <li class="logged-in">
+      <li>
+        <div class="menu-item">
         {{#if username}}
         LOGGED IN AS: {{username}}
+        </div>
       </li>
       <li>
         <form action="/logout" method="POST">
@@ -41,6 +43,7 @@
       {{/if}}
     </ul>
 
+  </div>
   {{{body}}}
   </div>
     {{> footer}}
