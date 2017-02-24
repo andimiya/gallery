@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
       res.render('pages/gallery', {
         "photos": photos,
       });
+    })
+    .catch( err => {
+      output.html('ERROR');
     });
 });
 
