@@ -26,6 +26,7 @@ passport.use(new LocalStrategy(
       .then (function(user) {
         if (user === null) {
           console.log('user failed');
+          console.log(res.locals.message);
           return done(null, false, { message: 'Bad username' });
         } else {
 
@@ -68,10 +69,10 @@ router.get('/profile', (req, res) => {
   res.render('profile', { username: req.user.username });
 });
 
-router.post('/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
     if (err) {
-      return next(err);
+      return done(err);
     }
     if (!user) {
       return res.redirect('/login');
