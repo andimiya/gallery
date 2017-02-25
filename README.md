@@ -8,6 +8,7 @@ Express Gallery
 3. Run `sequelize db:seed:all`
 4. Run `gulp`
 5. Load `localhost:3000`
+6. Click on 'Create Account' to create an account and be able to add photos, edit photos, and delete photos.
 
 ---
 
