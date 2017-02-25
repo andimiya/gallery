@@ -6,8 +6,11 @@ const CONFIG = require('../config/config.json');
 const router = express.Router();
 const isAuth = require('../isAuth');
 const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
 const db = require('../models');
 const { User } = db;
+
+const saltRounds = 10;
 
 const sess = {
   secret: CONFIG.development.secret

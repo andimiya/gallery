@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
+const bcrypt = require('bcrypt');
 const { User, Photo } = db;
 const methodOverride = require('method-override');
 const isAuth = require('../isAuth');
+const saltRounds = 10;
 
 router.use(methodOverride('_method'));
 
@@ -71,22 +73,31 @@ router.post('/new', isAuth, (req, res) => {
       res.redirect('/');
     })
     .catch( err => {
-        res.render('pages/error');
+      res.render('pages/error');
     });
 });
 
 router.post('/new-user', (req, res) => {
-  User.create({
-    username: req.body.username,
-    password: req.body.password
-  })
-    .then( user => {
-      res.redirect('/');
-    })
-    .catch( err => {
-        res.render('pages/error');
+  console.log('req username', req.body.username);
+  console.log('req password', req.body.password);
+
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(req.body.password, salt, function(err, hash) {
+        console.log('hash', hash);
+        User.create({
+          username: req.body.username,
+          password: hash
+        })
+          .then( user => {
+            res.redirect('/');
+          })
+          .catch( err => {
+            res.render('pages/error');
+          });
     });
+  });
 });
+
 
 router.put('/:id', isAuth, (req, res) => {
   Photo.update({
@@ -103,7 +114,7 @@ router.put('/:id', isAuth, (req, res) => {
       res.redirect('/');
     })
     .catch( err => {
-        res.render('pages/error');
+      res.render('pages/error');
     });
 });
 
