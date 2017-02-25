@@ -6,6 +6,7 @@ const { User, Photo } = db;
 const methodOverride = require('method-override');
 const isAuth = require('../isAuth');
 const saltRounds = 10;
+const flash = require('connect-flash');
 
 router.use(methodOverride('_method'));
 

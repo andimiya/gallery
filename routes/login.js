@@ -11,8 +11,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const db = require('../models');
 const { User } = db;
 
-
-
 const sess = {
   secret: CONFIG.development.secret
 };

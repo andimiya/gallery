@@ -9,7 +9,7 @@ const { User, Photo } = db;
 const CONFIG = require('./config/config.json');
 const passport = require('passport');
 const setUsername = require('./setUsername');
-const errorHandler = require('./errorHandler');
+const flash = require('connect-flash');
 
 const gallery = require('./routes/gallery');
 const login = require('./routes/login');
@@ -22,9 +22,8 @@ const sess = {
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
-app.use(errorHandler);
-
 app.use(express.static('public'));
+app.use(flash());
 
 app.use(session({
   store: new redisStore(),
@@ -42,7 +41,6 @@ const hbs = handlebars.create({
   extname: '.hbs',
   defaultLayout: 'app'
 });
-
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
