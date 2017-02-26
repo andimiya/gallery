@@ -6,7 +6,7 @@ const { User, Photo } = db;
 const methodOverride = require('method-override');
 const isAuth = require('../isAuth');
 const saltRounds = 10;
-const flash = require('connect-flash');
+// const flash = require('connect-flash');
 
 router.use(methodOverride('_method'));
 
@@ -79,7 +79,7 @@ router.post('/new-user', (req, res) => {
           password: hash
         })
           .then( user => {
-            req.flash('account-created', 'Account has been created, log in!');
+            // req.flash('account-created', 'Account has been created, log in!');
             res.redirect('/login');
           })
           .catch( err => {

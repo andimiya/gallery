@@ -1,7 +1,9 @@
 
     {{#each hero}}
     <div class="hero">
-      <img src="{{link}}" class="hero-image">
+      <a href="/gallery/{{id}}">
+        <img src="{{link}}" class="hero-image">
+      </a>
     </div>
     {{/each}}
     <hr class="hr-under-hero"/>

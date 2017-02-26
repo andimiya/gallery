@@ -4,7 +4,11 @@
     <p>
     {{photo.title}}
     </p>
+
+
     <img src="{{photo.link}}" class="photo-large">
+
+    {{#if username}}
     <div class="button-container">
       <div class="button-one">
         <form action="/gallery/{{photo.id}}/edit" method="GET">
@@ -17,6 +21,7 @@
         </form>
       </div>
     </div>
+    {{/if}}
     <div class="caption">
       {{photo.description}}
     </div>
