@@ -3,6 +3,9 @@ h2 {
   font-weight: bold;
   font-size: 18px; }
 
+.error-text {
+  color: red; }
+
 .description-text {
   height: 200px;
   width: 500px; }

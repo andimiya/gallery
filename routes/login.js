@@ -4,6 +4,7 @@ const passport = require('passport');
 const bp = require('body-parser');
 const CONFIG = require('../config/config.json');
 const router = express.Router();
+const flash = require('connect-flash');
 const isAuth = require('../isAuth');
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
@@ -26,7 +27,8 @@ passport.use(new LocalStrategy(
       .then (function(user) {
         if (user === null) {
           console.log('user failed');
-          console.log(res.locals.message);
+          // req.flash('login', 'Log in right now');
+          // res.render('./pages/login', { message: req.flash('login') });
           return done(null, false, { message: 'Bad username' });
         } else {
 
@@ -37,6 +39,7 @@ passport.use(new LocalStrategy(
               }
               else {
                 console.log('invalid password');
+
                 return done(null, false, { message: 'bad password'});
               }
             });
@@ -72,6 +75,9 @@ router.get('/profile', (req, res) => {
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
+      // req.flash('login', 'Log in right now');
+      // res.redirect('./pages/login', { message: req.flash('login') });
+
       return done(err);
     }
     if (!user) {

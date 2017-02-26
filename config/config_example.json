@@ -1,0 +1,25 @@
+{
+  "development": {
+
+    "username": "USERNAME", //Enter your database username here
+    "password": null,
+    "database": "DATABASE", //Enter your database name here
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "secret": "PASSWORD" //Enter your database password here
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

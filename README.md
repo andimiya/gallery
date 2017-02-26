@@ -3,12 +3,19 @@ Express Gallery
 
 ## Run On Your Local Machine
 
-1. Run `npm install`
-2. Run `sequelize db:migrate`
-3. Run `sequelize db:seed:all`
-4. Run `gulp`
-5. Load `localhost:3000`
-6. Click on 'Create Account' to create an account and be able to add photos, edit photos, and delete photos.
+1. Set up a postgres database with a database name, username, and password
+2. Clone this repository
+3. Edit the config_example.json in the config folder of this repo
+  - Enter your database username
+  - Enter your database name
+  - Enter your database password
+4. Rename the config_example.json file to config.json
+5. Run `npm install`
+6. Run `sequelize db:migrate`
+7. Run `sequelize db:seed:all`
+8. Run `gulp`
+9. Load `localhost:3000`
+10. Click on 'Create Account' to create an account and be able to add photos, edit photos, and delete photos.
 
 ---
 

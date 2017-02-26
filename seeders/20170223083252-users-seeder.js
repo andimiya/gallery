@@ -1,4 +1,6 @@
-'use strict';
+// 'use strict';
+const bcrypt = require('bcrypt');
+
 
 var Users = [
 {
