@@ -27,3 +27,6 @@
   @media only screen and (max-width: 768px) {
     .image-grid {
       justify-content: center; } }
+
+.grid-captions {
+  margin-top: 5px; }

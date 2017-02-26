@@ -245,6 +245,9 @@ input[type=submit]:hover {
     .image-grid {
       justify-content: center; } }
 
+.grid-captions {
+  margin-top: 5px; }
+
 .container {
   width: 960px;
   margin: 60px auto;
