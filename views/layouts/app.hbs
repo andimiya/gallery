@@ -13,6 +13,7 @@
       </div>
 
     <ul id="horizontal-menu">
+      {{#if username}}
       <li>
         <form action="/gallery/new" method="GET">
           <button class="menu-button">ADD PHOTO</button>
@@ -20,7 +21,6 @@
       </li>
       <li>
         <div class="menu-item">
-        {{#if username}}
         LOGGED IN AS: {{username}}
         </div>
       </li>
