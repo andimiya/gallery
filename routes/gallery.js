@@ -11,15 +11,7 @@ const flash = require('connect-flash');
 router.use(methodOverride('_method'));
 
 router.get('/', (req, res) => {
-  Photo.findAll()
-    .then( photos => {
-      res.render('pages/gallery', {
-        "photos": photos,
-      });
-    })
-    .catch( err => {
-      res.render('pages/error');
-    });
+  res.redirect('./');
 });
 
 router.get('/new', isAuth, (req, res) => {
@@ -79,9 +71,6 @@ router.post('/new', isAuth, (req, res) => {
 });
 
 router.post('/new-user', (req, res) => {
-  console.log('req username', req.body.username);
-  console.log('req password', req.body.password);
-
   bcrypt.genSalt(saltRounds, function(err, salt) {
     bcrypt.hash(req.body.password, salt, function(err, hash) {
         console.log('hash', hash);
@@ -90,7 +79,8 @@ router.post('/new-user', (req, res) => {
           password: hash
         })
           .then( user => {
-            res.redirect('/');
+            req.flash('account-created', 'Account has been created, log in!');
+            res.redirect('/login');
           })
           .catch( err => {
             res.render('pages/error');
@@ -98,7 +88,6 @@ router.post('/new-user', (req, res) => {
     });
   });
 });
-
 
 router.put('/:id', isAuth, (req, res) => {
   Photo.update({

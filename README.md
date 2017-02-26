@@ -3,7 +3,7 @@ Express Gallery
 
 ## Run On Your Local Machine
 
-1. Set up a postgres database with a database name, username, and password
+1. Set up a postgreSQL database with a database name, username, and password
 2. Clone this repository
 3. Edit the config_example.json in the config folder of this repo
   - Enter your database username
@@ -16,6 +16,7 @@ Express Gallery
 8. Run `gulp`
 9. Load `localhost:3000`
 10. Click on 'Create Account' to create an account and be able to add photos, edit photos, and delete photos.
+
 
 ---
 

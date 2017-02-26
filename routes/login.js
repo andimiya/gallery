@@ -65,7 +65,8 @@ passport.deserializeUser((user, done) => {
 });
 
 router.get('/login', (req, res) => {
-  res.render('./pages/login');
+  res.render('./pages/login', {
+    messages: req.flash('account-created') });
 });
 
 router.get('/profile', (req, res) => {

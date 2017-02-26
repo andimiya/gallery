@@ -46,12 +46,19 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
 app.get('/', setUsername, (req, res) => {
-  Photo.findAll()
-    .then( photos => {
-      res.render('pages/gallery', {
-        "photos": photos
-      });
+  Promise.all([
+    Photo.findAll({ limit: 1 }),
+    Photo.findAll()
+    ])
+    .then( results => {
+    res.render('pages/gallery', {
+      "hero": results[0],
+      "photos": results[1]
+    })
+    .catch( err => {
+      res.render('pages/error');
     });
+  });
 });
 
 app.listen(3000, function() {
