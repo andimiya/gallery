@@ -1,11 +1,11 @@
-// 'use strict';
-const bcrypt = require('bcrypt');
-
+var bcrypt = require('bcrypt');
+var salt = bcrypt.genSaltSync(10);
+var hash = bcrypt.hashSync('password', salt);
 
 var Users = [
 {
   username: 'FirstUser',
-  password: 'password',
+  password: hash,
   createdAt: new Date(),
   updatedAt: new Date()
 }];

@@ -1,4 +1,5 @@
-'use strict';
+var bcrypt = require("bcrypt");
+
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     username: DataTypes.STRING,
@@ -10,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         // associations can be defined here
       }
     }
+
   });
   return User;
 };
