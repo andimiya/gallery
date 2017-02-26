@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const errorHandler = require('./lib/errorHandler');
 const redisStore = require('connect-redis')(session);
 const handlebars = require('express-handlebars');
 const app = express();
@@ -8,7 +9,7 @@ const db = require('./models');
 const { User, Photo } = db;
 const CONFIG = require('./config/config.json');
 const passport = require('passport');
-const setUsername = require('./setUsername');
+const setUsername = require('./lib/setUsername');
 const flash = require('connect-flash');
 
 const gallery = require('./routes/gallery');
@@ -21,6 +22,8 @@ const sess = {
 //bodyparser
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
+
+app.use(errorHandler);
 
 app.use(express.static('public'));
 app.use(flash());

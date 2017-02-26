@@ -4,7 +4,7 @@ const db = require('../models');
 const bcrypt = require('bcrypt');
 const { User, Photo } = db;
 const methodOverride = require('method-override');
-const isAuth = require('../isAuth');
+const isAuth = require('../lib/isAuth');
 const saltRounds = 10;
 // const flash = require('connect-flash');
 
@@ -71,8 +71,8 @@ router.post('/new', isAuth, (req, res) => {
 });
 
 router.post('/new-user', (req, res) => {
-  bcrypt.genSalt(saltRounds, function(err, salt) {
-    bcrypt.hash(req.body.password, salt, function(err, hash) {
+  bcrypt.genSalt(saltRounds, (err, salt) => {
+    bcrypt.hash(req.body.password, salt, (err, hash) => {
         console.log('hash', hash);
         User.create({
           username: req.body.username,

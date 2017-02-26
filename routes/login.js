@@ -5,7 +5,7 @@ const bp = require('body-parser');
 const CONFIG = require('../config/config.json');
 const router = express.Router();
 const flash = require('connect-flash');
-const isAuth = require('../isAuth');
+const isAuth = require('../lib/isAuth');
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -18,13 +18,13 @@ const sess = {
 
 //This new LocalStrategy is how passport authenticates
 passport.use(new LocalStrategy(
-  function(username, password, done) {
+  (username, password, done) => {
     User.findOne({
       where: {
         username: username,
       }
     })
-      .then (function(user) {
+      .then ((user) => {
         if (user === null) {
           console.log('user failed');
           // req.flash('login', 'Log in right now');
@@ -45,7 +45,7 @@ passport.use(new LocalStrategy(
             });
         }
       })
-    .catch (function(err) {
+    .catch ((err) => {
       console.log('error: ', err);
     });
   }

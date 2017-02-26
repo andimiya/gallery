@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: function (queryInterface, Sequelize) {
+  up: (queryInterface, Sequelize) => {
     queryInterface.renameColumn('Photos', 'url', 'link');
     /*
       Add altering commands here.
@@ -12,7 +12,7 @@ module.exports = {
     */
   },
 
-  down: function (queryInterface, Sequelize) {
+  down: (queryInterface, Sequelize) => {
     queryInterface.renameColumn('Photos', 'link', 'url');
     /*
       Add reverting commands here.
