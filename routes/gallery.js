@@ -5,7 +5,8 @@ const bcrypt = require('bcrypt');
 const { User, Photo } = db;
 const methodOverride = require('method-override');
 const isAuth = require('../lib/isAuth');
-const saltRounds = 10;
+const CONFIG = require('../config/config.json');
+const saltRounds = CONFIG.development.saltRounds;
 // const flash = require('connect-flash');
 
 router.use(methodOverride('_method'));

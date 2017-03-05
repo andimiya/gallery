@@ -11,6 +11,7 @@ const CONFIG = require('./config/config.json');
 const passport = require('passport');
 const setUsername = require('./lib/setUsername');
 const flash = require('connect-flash');
+const redisExpress = require('express-redis');
 
 const gallery = require('./routes/gallery');
 const login = require('./routes/login');
@@ -27,6 +28,8 @@ app.use(errorHandler);
 
 app.use(express.static('public'));
 app.use(flash());
+
+app.use(redisExpress);
 
 app.use(session({
   store: new redisStore(),
